@@ -1,0 +1,62 @@
+.shortcut-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 744px) {
+  .shortcut-section {
+    padding: 40px 64px;
+  }
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 744px) {
+  .shortcut-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 데스크탑에서 바로가기 메뉴 숨김 */
+@media (min-width: 1280px) {
+  .shortcut-section {
+    display: none;
+  }
+}
+
+.shortcut-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-normal);
+  padding: 20px 24px;
+  text-decoration: none;
+  color: var(--color-text-main);
+  transition: background-color 0.2s ease;
+}
+
+.shortcut-card:hover {
+  background-color: #E5E7EB;
+}
+
+.shortcut-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.shortcut-icon {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}

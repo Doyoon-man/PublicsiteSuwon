@@ -1,0 +1,473 @@
+:root {
+  --ls-primary-normal: #1a2a4b;
+  --ls-primary-dark: #142038;
+  --ls-primary-dark-hover: #10192d;
+  --ls-primary-light: #e8eaed;
+  --ls-green-light: #eff3f3;
+  --ls-green-dark-hover: #3a5253;
+  --ls-black: #000000;
+  --ls-white: #ffffff;
+  --ls-border-light: #cfcfcf;
+  
+  --ls-radius-lg: 16px;
+  --ls-radius-sm: 8px;
+}
+
+.login-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--ls-white);
+  z-index: 1000;
+  overflow-y: auto;
+  font-family: 'NanumGothic', sans-serif;
+  color: var(--ls-black);
+}
+
+.login-screen-container {
+  width: 100%;
+  max-width: 480px; /* Mobile width constraint */
+  margin: 0 auto;
+  padding: 24px 16px 64px 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.ls-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--ls-border-light);
+  margin-bottom: 32px;
+}
+
+.ls-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ls-logo {
+  width: 35px;
+  height: 37px;
+  object-fit: contain;
+}
+
+.ls-company-name {
+  font-family: 'NanumGothicOTF', 'NanumGothic', sans-serif;
+  font-size: 30px;
+  font-weight: 700; /* ExtraBold */
+  line-height: 1.1;
+  color: var(--ls-primary-normal);
+  margin: 0;
+}
+
+.ls-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--ls-black);
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section Title */
+.ls-section-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  color: var(--ls-primary-dark);
+}
+
+/* Login Fields */
+.ls-login-box {
+  background-color: var(--ls-green-light);
+  padding: 24px;
+  border-radius: var(--ls-radius-lg);
+  margin-bottom: 40px;
+}
+
+.ls-login-label {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: block;
+  color: var(--ls-black);
+}
+
+.ls-input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ls-inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ls-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ls-input-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.ls-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--ls-black);
+  background-color: var(--ls-white);
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--ls-black);
+  box-sizing: border-box;
+}
+
+.ls-input::placeholder {
+  color: #888;
+}
+
+.ls-input:focus {
+  outline: 2px solid var(--ls-primary-normal);
+}
+
+.ls-login-btn {
+  width: 90px;
+  height: 140px;
+  align-self: flex-end;
+  background-color: var(--ls-primary-normal);
+  color: var(--ls-white);
+  border: none;
+  border-radius: var(--ls-radius-sm);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ls-login-btn:hover {
+  background-color: var(--ls-primary-dark-hover);
+}
+
+.ls-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ls-checkbox-label, .ls-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #333;
+}
+
+.ls-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1px solid var(--ls-black);
+  appearance: none;
+  background-color: var(--ls-white);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+.ls-checkbox::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: var(--ls-primary-normal);
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.ls-checkbox:checked::before {
+  transform: scale(1);
+}
+
+.ls-toggle {
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  background-color: #888;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  transition: background-color 0.2s;
+}
+
+.ls-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--ls-white);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.ls-toggle:checked {
+  background-color: var(--ls-green-dark-hover);
+}
+
+.ls-toggle:checked::after {
+  transform: translateX(20px);
+}
+
+/* Registration & Recovery */
+.ls-recovery-box {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ls-info-block {
+  background-color: var(--ls-primary-light); /* Light gray background */
+  padding: 24px;
+  border-radius: var(--ls-radius-lg);
+}
+
+.ls-info-question {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--ls-primary-dark);
+}
+
+.ls-info-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: #444;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.ls-primary-inline-btn {
+  padding: 12px 20px;
+  background-color: var(--ls-primary-normal);
+  border: none;
+  border-radius: var(--ls-radius-sm);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ls-white);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+.ls-primary-inline-btn:hover {
+  background-color: var(--ls-primary-dark-hover);
+}
+
+/* Unified Login / Quick Auth */
+.ls-unified-box {
+  margin-top: auto;
+}
+
+.ls-unified-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: var(--ls-black);
+}
+
+.ls-auth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ls-auth-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: var(--ls-green-light);
+  border: none;
+  border-radius: var(--ls-radius-sm);
+  cursor: pointer;
+  padding: 24px 16px;
+  transition: background-color 0.2s;
+}
+
+.ls-auth-btn:hover {
+  background-color: var(--ls-border-light);
+}
+
+.ls-auth-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ls-primary-normal);
+}
+
+.ls-auth-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ls-primary-dark);
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* Promo Banner */
+.ls-promo-box {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.ls-promo-banner {
+  width: 100%;
+  height: auto;
+  border-radius: var(--ls-radius-lg);
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet Responsive Layout */
+@media (min-width: 744px) {
+  .login-screen-container {
+    max-width: 744px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .ls-input-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ls-input-label {
+    width: 60px;
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+  .ls-auth-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .ls-login-btn {
+    height: auto;
+    align-self: stretch;
+  }
+}
+
+/* Desktop Responsive Layout */
+@media (min-width: 1280px) {
+  .login-screen-overlay {
+    position: static;
+    background-color: transparent;
+    z-index: auto;
+  }
+
+  .login-screen-container {
+    max-width: 1024px;
+    padding-top: 64px;
+    padding-bottom: 120px;
+    margin: 0 auto;
+    min-height: auto;
+  }
+
+  .ls-header {
+    display: none;
+  }
+
+  .ls-section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .ls-desktop-top-row {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .ls-login-box {
+    width: 440px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ls-recovery-box {
+    width: 440px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .ls-unified-box {
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .ls-auth-grid {
+    gap: 18px;
+  }
+
+  .ls-auth-btn {
+    padding: 40px 24px;
+    gap: 20px;
+  }
+
+  .ls-auth-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .ls-auth-icon svg {
+    width: 64px;
+    height: 64px;
+  }
+
+  .ls-auth-text {
+    font-size: 20px;
+  }
+
+  .ls-promo-box {
+    margin-top: 60px;
+  }
+}

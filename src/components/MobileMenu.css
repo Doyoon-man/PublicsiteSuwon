@@ -1,0 +1,180 @@
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary, #1a2a4b);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Header */
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--color-primary, #1a2a4b);
+  color: #ffffff;
+}
+
+.mobile-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-logo-text {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.mobile-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-login-btn {
+  color: #e8eaed; /* 보조색 */
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18.4px;
+}
+
+.mobile-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.mobile-close-btn:hover {
+  color: #a0a0a0; /* 회색 */
+}
+
+/* Body: Two columns layout for categories and subcategories */
+.mobile-menu-body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.mobile-category-list {
+  display: flex;
+  flex: 0 0 110px;
+  background-color: var(--color-primary, #1a2a4b);
+}
+
+.mobile-category-list ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-category-list li {
+  width: 100%;
+}
+
+.category-btn {
+  width: 100%;
+  padding: 16px 0;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background-color: #ffffff;
+  color: var(--color-primary, #1a2a4b);
+}
+
+/* Subcategories */
+.mobile-subcategory-list {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.subcategory-header {
+  margin-bottom: 20px;
+}
+
+.subcategory-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.mobile-subcategory-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subcategory-link {
+  display: block;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18.4px;
+  color: #4b4b4b; /* 진한 회색 */
+  padding: 4px 8px; /* 좌우 패딩 확보 및 호버 시 테두리 여백 고려 */
+  border: 1px solid transparent; /* 밀림 방지용 투명 테두리 */
+  border-radius: 2px; /* 둥근 테두리 적용 */
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.subcategory-link:hover {
+  border: 1px solid var(--color-primary, #1a2a4b);
+  color: var(--color-primary, #1a2a4b);
+}
+
+/* 모서리는 모두 0px (직각)으로 유지 (별도 border-radius 설정 안함) */
+
+/* Tablet Responsive Layout */
+@media (min-width: 744px) {
+  .mobile-category-list {
+    flex: 0 0 139px;
+  }
+  
+  .category-btn {
+    font-size: 24px;
+  }
+}
