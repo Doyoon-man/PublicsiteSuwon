@@ -20,7 +20,7 @@ function Footer() {
     { title: '수원연화장', url: 'https://www.suwonudc.co.kr/suwonyhj/mainPage.do', icon: death },
     { title: '종량제물품접수', url: 'https://www.suwonudc.co.kr/recycle/mainPage.do', icon: trash },
     { title: '사업현황', url: 'https://www.suwonudc.co.kr/swdevelop/PageLink.do?thirdMenuNo=&subMenuNo=010600&menuN=010000&link=forward:/PageContent.do&tempParam1=&', icon: business },
-    { title: '온라인통합민원', url: 'https://www.suwonudc.co.kr/recycle/mainPage.do', icon: online },
+    { title: '온라인통합민원', url: 'https://www.suwonudc.co.kr/PageLink.do?menuNo=040000&subMenuNo=040110&link=forward:/PageContent.do&tempParam1=&', icon: online },
     { title: '전국 도시 공사', url: 'https://www.suwonudc.co.kr/swdevelop/mainPage.do', icon: city },
     { title: '관련기관 사이트', url: 'https://www.suwonudc.co.kr/swdevelop/PageLink.do?thirdMenuNo=&subMenuNo=010600&menuN=010000&link=forward:/PageContent.do&tempParam1=&', icon: site }
   ];
