@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from "./../assets/logo.png";
 import login from "./../assets/login.svg";
@@ -39,7 +40,7 @@ function Header({ onLoginClick, onMenuClick }) {
     <header className="site-header" role="banner" onMouseLeave={closeMenu}>
       <div className="header-container">
         <h1 className="logo">
-          <a href="/" aria-label="수원도시공사 홈으로 이동">
+          <a to="https://doyoon-man.github.io/PublicsiteSuwon/#" aria-label="수원도시공사 홈으로 이동">
             <span aria-hidden="true" className="logo-icon"><img src={logo} alt="로고" /></span>
             수원도시공사
           </a>
