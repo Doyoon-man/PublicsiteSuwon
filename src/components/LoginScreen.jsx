@@ -158,7 +158,7 @@ function LoginScreen({ onClose }) {
         </div>
         
         <div className="ls-promo-box">
-          <img src="/promo_banner.png" alt="수원도시공사 시민과 함께하는 아름다운 공기업" className="ls-promo-banner" />
+          <img src={`${import.meta.env.BASE_URL}promo_banner.png`} alt="수원도시공사 시민과 함께하는 아름다운 공기업" className="ls-promo-banner" />
         </div>
         
       </div>
