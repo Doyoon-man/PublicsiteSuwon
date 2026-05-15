@@ -1,16 +1,88 @@
-# React + Vite
+# 수원도시공사 웹 접근성 개선 및 반응형 리뉴얼 프로젝트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> "시민을 위한 더 넓은 연결, 수원도시공사 반응형 웹 포트폴리오"
 
-Currently, two official plugins are available:
+## 1. 프로젝트 소개
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **설명:** 정보 접근 취약계층을 포함한 모든 사용자가 제약 없이 공공 서비스를 이용할 수 있도록, 한국형 웹 콘텐츠 접근성 지침(KWCAG)을 준수하고 모바일·태블릿·데스크탑 등 다양한 디바이스에 최적화된 화면을 제공하는 반응형 리뉴얼 프로젝트입니다.
+- **진행 기간:** 2026.04.03 ~ 2026.05.15 (43일)
+- **개발 인원:** 개인 프로젝트 (기여도 100%)
 
-## React Compiler
+## 2. 배포 및 관련 링크
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Live Demo:** [배포된 웹사이트 링크](https://doyoon-man.github.io/PublicsiteSuwon/)
+- **GitHub Repository:** [깃허브 링크](https://github.com/doyoon-man/PublicsiteSuwon)
+- **Design (Figma):** [피그마 시안 링크](https://www.figma.com/design/TnI7vlagHnI2Fm4nAvMDgr/%EA%B3%B5%EA%B3%B5%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B0%9C%EC%84%A0-%EA%B9%80%EB%8F%84%EC%9C%A4?node-id=278-2484&t=8A9Q3rkcGFTC3d2o-1)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 3. 사용 기술 스택
+
+### Frontend
+
+- **React.js & Vite:** 컴포넌트 기반 개발로 복잡한 공공기관 UI의 유지보수성을 높이고, 빠른 응답 속도를 구현하기 위해 사용
+- **React Router DOM:** SPA(Single Page Application) 방식으로 새로고침 없는 매끄러운 화면 전환 제공 (홈 ↔ 로그인)
+
+### Deployment & CI/CD
+
+- **GitHub Pages & Actions:** `deploy.yml` 워크플로우를 구성하여 `main` 브랜치 푸시 시 자동 빌드 및 배포 처리
+
+### Design & Tools
+
+- **Figma:** 디바이스별(Mobile, Tablet 744px, Desktop 1280px) 반응형 UI/UX 설계 및 프로토타이핑
+- **Lighthouse / Axe-core:** 웹 접근성 진단 및 품질 지표 측정을 위한 도구 활용
+
+### AI-Assisted Development (Vibe Coding)
+
+- **Google Gemini / Antigravity:** 시맨틱 마크업 검토, ARIA 속성 최적화, 컴포넌트 분리 및 반응형 로직 리팩토링을 위한 페어 프로그래밍 도구로 활용
+- **AI 활용 목표:** 복잡한 공공기관의 정보 구조를 논리적인 접근성 표준에 맞춰 빠르게 재구성하고 오류를 사전에 방지
+
+---
+
+## 4. 사용자 작업 흐름
+
+**주요 과업: 반응형 웹 탐색 및 통합 로그인 서비스 이용 흐름**
+
+1. **메인 화면 진입:** 스크린 리더 사용자를 위한 '본문 건너뛰기' 링크 제공 및 접근성 보장 헤더 탐색
+2. **다양한 디바이스 뷰포트 대응:** 모바일(햄버거 메뉴), 데스크탑(메가 드롭다운 메뉴) 등 디바이스 크기에 따른 메뉴 접근 경험
+3. **주요 소식 및 바로가기 확인:** 인터랙티브한 롤링 배너와 퀵 메뉴(탑동IV, 개발사업 등)를 통한 핵심 서비스 이동
+4. **게시판 정보 탐색:** 공지사항, 보도자료 등 탭 기반의 게시판으로 빠르게 시정 소식 확인
+5. **로그인 프로세스:** 통합 로그인 페이지(`/login`) 진입, 간편인증 및 공동/금융 인증서 등 다중 인증 옵션 확인
+
+---
+
+## 5. AI 활용 및 개발 워크플로우 (Vibe Coding)
+
+- **완벽한 반응형 웹 디자인 (RWD):** Mobile First를 기반으로 설계하여, Tablet(744px), Desktop(1280px)의 3단계 브레이크포인트에 맞춘 유연한 그리드와 UI/UX 적용
+- **웹 접근성 표준 준수:** 키보드 전용 사용자, 시각 장애인(스크린 리더)을 위한 시맨틱 마크업 및 `aria-label`, `role` 속성 등 초점(Focus) 관리 최적화
+- **인터랙티브 모바일 메뉴:** 모바일/태블릿 환경을 위한 화면 전체를 덮는 매끄러운 동작의 Drawer 메뉴 구현 (`MobileMenu.jsx`)
+- **컴포넌트 모듈화:** Header, Footer, MainBanner, BoardSection, LoginScreen 등으로 분리하여 코드 가독성 및 재사용성 향상
+
+---
+
+## 7. 디렉토리 구조
+
+```text
+src
+├── assets          # 로고, 아이콘 등 정적 이미지 자원
+├── components      # 공통 및 화면 단위 UI 컴포넌트
+│   ├── Header.jsx       # 글로벌 네비게이션 및 반응형 헤더
+│   ├── Footer.jsx       # 하단 정보 및 관련기관 사이트 링크
+│   ├── LoginScreen.jsx  # 라우팅 기반의 통합 로그인 페이지
+│   ├── MainBanner.jsx   # 롤링 애니메이션 메인 배너
+│   ├── MobileMenu.jsx   # 모바일/태블릿 전용 풀스크린 메뉴
+│   ├── ShortcutMenu.jsx # 주요 서비스 퀵 메뉴
+│   └── BoardSection.jsx # 공지사항/보도자료 탭 게시판
+├── App.jsx         # 라우팅 및 접근성 Provider 설정
+├── global.css      # 공통 CSS 리셋 및 접근성 유틸리티 클래스 (.sr-only 등)
+└── main.jsx        # React 앱 진입점 (BrowserRouter 설정)
+```
+
+---
+
+## 8. 회고 및 인사이트
+
+**[기술보다 중요한 배려, 웹 접근성]**
+커뮤니케이션 디자인 학과로써 보는 눈이 즐겁게 하여 시각적으로 화려하고 매력있는 웹사이트를 만드는 것이 웹디자인의 본질이라고 생각했습니다. 하지만 수원도시공사와 같은 공공기관의 웹사이트를 보게 되었는데, 겉보기에는 화려해 보여도 막상 사용해보면 작은 기능 하나가 불편한 점이 있다고 느껴지게 되었습니다. 이를 개선하면서 신체적, 환경적 제약이 있는 사용자도 소외되지 않는 기술적 배려가 웹디자인의 본질임을 깨닫게 되었습니다.
+**[AI와의 협업, Vibe Coding의 가능성]**
+코딩을 처음 사용하므로써 많은 어려움을 겪었지만 AI 도구를 단순한 코드 자동 생성이 아닌, 표준 지침 준수 여부를 검증하는 '접근성 감리 파트너'로써 활용했습니다. 컴포넌트 리팩토링이나 라우팅 오류(GitHub Pages 서브 디렉토리 이슈 등) 해결 과정에서 신속하고 정확하게 문제를 찾아 고치며 실무 효율을 극대화할 수 있었습니다.
