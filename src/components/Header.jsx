@@ -11,6 +11,23 @@ const SignupIcon = () => (
   <img src={signup} alt="회원가입" />
 );
 
+const ShortcutIcon = () => (
+  <svg 
+    width="16" 
+    height="16" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" y1="14" x2="21" y2="3"></line>
+  </svg>
+);
+
 const menuData = {
   '개발·사업': [
     { name: '도시개발사업', url: 'https://www.suwonudc.co.kr/swdevelop/PageLink.do?thirdMenuNo=&subMenuNo=010100&menuN=010000&link=forward:/PageContent.do&tempParam1=&' },
@@ -139,7 +156,8 @@ function Header({ onLoginClick, onMenuClick }) {
                     className="mega-menu-item"
                     onClick={() => window.open(item.url, '_blank')}
                   >
-                    {item.name}
+                    <span>{item.name}</span>
+                    <ShortcutIcon />
                   </button>
                 ))}
               </div>
