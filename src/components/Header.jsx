@@ -104,7 +104,7 @@ function Header({ onLoginClick, onMenuClick }) {
                 <span aria-hidden="true" className="icon"><img src={hamburger} alt="메뉴" /></span>
                 <span className="btn-text">메뉴</span>
               </button>
-              <button className="nav-btn signup-btn" aria-label="회원가입">
+              <button className="nav-btn signup-btn" aria-label="회원가입" onClick={() => alert("아직 작업중")}>
                 <span aria-hidden="true" className="icon"><SignupIcon /></span>
                 <span className="btn-text">회원가입</span>
               </button>
