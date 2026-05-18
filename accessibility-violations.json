@@ -1,0 +1,57 @@
+[
+  {
+    "id": "color-contrast",
+    "impact": "serious",
+    "tags": [
+      "cat.color",
+      "wcag2aa",
+      "wcag143",
+      "TTv5",
+      "TT13.c",
+      "EN-301-549",
+      "EN-9.1.4.3",
+      "ACT",
+      "RGAAv4",
+      "RGAA-3.2.1"
+    ],
+    "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+    "nodes": [
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#7a8397",
+              "bgColor": "#1a2a4b",
+              "contrastRatio": 3.73,
+              "fontSize": "9.6pt (12.8px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<footer class=\"site-footer\" role=\"contentinfo\">",
+                "target": [
+                  "footer"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.73 (foreground color: #7a8397, background color: #1a2a4b, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<p class=\"copyright\">이 페이지는 포트폴리오 제작을 위해 만들어졌으며, 디자인에 들어가있는 이미지는 AI를 이용하여 만들어졌습니다.</p>",
+        "target": [
+          ".copyright"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.73 (foreground color: #7a8397, background color: #1a2a4b, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  }
+]
